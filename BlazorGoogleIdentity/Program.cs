@@ -13,7 +13,6 @@ using System.Threading.Tasks;
 // https://stackoverflow.com/questions/66083740/google-auth-error-getting-access-token-in-blazor/66139736#66139736
 // https://developers.google.com/identity/protocols/oauth2/javascript-implicit-flow
 
-
 namespace BlazorGoogleIdentity
 {
     public class Program
@@ -25,11 +24,12 @@ namespace BlazorGoogleIdentity
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
-
             builder.Services.AddOidcAuthentication(options =>
             {
-                builder.Configuration.Bind("web", options.ProviderOptions);
-
+                // Configure your authentication provider options here.
+                // For more information, see https://aka.ms/blazor-standalone-auth
+                // https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.components.webassembly.authentication.oidcprovideroptions?view=aspnetcore-5.0
+                builder.Configuration.Bind("desk", options.ProviderOptions);
             });
 
             await builder.Build().RunAsync();
