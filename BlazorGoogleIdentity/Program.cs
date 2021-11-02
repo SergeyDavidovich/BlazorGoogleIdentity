@@ -29,7 +29,7 @@ namespace BlazorGoogleIdentity
                 // Configure your authentication provider options here.
                 // For more information, see https://aka.ms/blazor-standalone-auth
                 // https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.components.webassembly.authentication.oidcprovideroptions?view=aspnetcore-5.0
-                builder.Configuration.Bind("desk", options.ProviderOptions);
+                builder.Configuration.Bind("google", options.ProviderOptions);
             });
 
             await builder.Build().RunAsync();
